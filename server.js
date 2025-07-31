@@ -5,8 +5,8 @@ const app=express();
 const port=3000
 app.use(cors())
 app.use(express.json());
-
-const MONGO_URI='mongodb+srv://harinivanitha25:harinivanitha25@expense1.loawixx.mongodb.net/expense?retryWrites=true&w=majority&appName=Expense1'
+require('dotenv').config();
+const MONGO_URI=process.env.MONGO_URI;
 const connectDb=async()=>
 {
     try{
